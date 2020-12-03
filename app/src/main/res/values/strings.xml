@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">OnlineQuiz</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mm">мм</string>
+    <string name="upper_calyx_text">Верхняя чащечка</string>
+    <string name="middle_calyx_text">Средняя чашечка</string>
+    <string name="lower_calyx_text">Нижняя чашечка</string>
+    <string name="pelvis_text">Почечная лоханка</string>
+</resources>

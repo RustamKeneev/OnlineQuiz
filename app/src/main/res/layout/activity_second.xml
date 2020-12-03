@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity">
+
+    <TextView
+        android:id="@+id/choose_category"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textAlignment="center"
+        android:layout_margin="8dp"
+        android:text="Выберите категорию"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints,RtlCompat" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/stone_in_location_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/choose_category"
+        app:layout_constraintRight_toRightOf="@id/choose_category"
+        app:layout_constraintTop_toBottomOf="@id/choose_category"
+        android:layout_margin="8dp"
+        android:text="По локализации конкремента"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/x_ray_stone_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/stone_in_location_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/stone_in_location_checkbox"
+        app:layout_constraintRight_toRightOf="@id/stone_in_location_checkbox"
+        android:text="По рентгенологической характеристике"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/start_test_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/stone_in_location_checkbox"
+        app:layout_constraintRight_toRightOf="@id/stone_in_location_checkbox"
+        android:layout_marginBottom="8dp"
+        android:text="Пройти тест"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/fragment"-->
+<!--        android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:defaultNavHost="true"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:navGraph="@navigation/location_stone_nav" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
