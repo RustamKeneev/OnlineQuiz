@@ -14,8 +14,8 @@ import com.google.android.material.checkbox.MaterialCheckBox;
 public class SecondActivity extends AppCompatActivity {
 
     private Button mStartTestButton;
-    private MaterialCheckBox mStoneInLocationCheckbox;
     private MaterialCheckBox mXRayStoneCheckbox;
+    private MaterialCheckBox mStoneByEtiologyCheckbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +26,15 @@ public class SecondActivity extends AppCompatActivity {
 
     private void initViews() {
         mStartTestButton = findViewById(R.id.start_test_button);
-        mStoneInLocationCheckbox = findViewById(R.id.stone_in_location_checkbox);
-        mXRayStoneCheckbox  = findViewById(R.id.x_ray_stone_checkbox);
+        mXRayStoneCheckbox = findViewById(R.id.x_ray_stone_checkbox);
+        mStoneByEtiologyCheckbox  = findViewById(R.id.by_etiology_stone_checkbox);
 
         mStartTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("ololo", "onClick: "+ v);
                 Intent intent = new Intent(SecondActivity.this,ThirdActivity.class);
-                intent.putExtra("checkbox1",mStoneInLocationCheckbox.isChecked());
-                intent.putExtra("checkbox2",mXRayStoneCheckbox.isChecked());
+                intent.putExtra("mXRayStoneCheckbox",mXRayStoneCheckbox.isChecked());
+                intent.putExtra("mStoneByEtiologyCheckbox",mStoneByEtiologyCheckbox.isChecked());
                 startActivity(intent);
             }
         });

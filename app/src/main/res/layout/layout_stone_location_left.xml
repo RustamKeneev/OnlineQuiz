@@ -5,169 +5,213 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/location_text"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/stone_location_left_card_view"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="8dp"
-        android:textAllCaps="true"
-        android:text="По локализации конкремента слева"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints">
 
-    <TextView
-        android:id="@+id/upper_calyx_left_text"
-        app:layout_constraintTop_toTopOf="@id/upper_calyx_left_edit"
-        app:layout_constraintBottom_toBottomOf="@id/upper_calyx_left_edit"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_margin="8dp"
-        android:text="@string/upper_calyx_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/upper_calyx_left_edit"
-        app:layout_constraintTop_toBottomOf="@id/location_text"
-        android:layout_marginTop="8dp"
-        android:hint="@string/mm"
-        android:maxLength="3"
-        android:inputType="number"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/location_left_text"
+                android:text="@string/location_stone_left_text"
+                android:layout_margin="8dp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/middle_calyx_left_text"
-        android:text="@string/middle_calyx_text"
-        app:layout_constraintLeft_toLeftOf="@id/upper_calyx_left_text"
-        app:layout_constraintTop_toTopOf="@id/middle_calyx_left_edit"
-        app:layout_constraintBottom_toBottomOf="@id/middle_calyx_left_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+            <ImageView
+                android:id="@+id/drop_down_left_button"
+                android:background="@drawable/ic_arrow_down"
+                app:layout_constraintTop_toTopOf="@id/location_left_text"
+                app:layout_constraintBottom_toBottomOf="@id/location_left_text"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="35dp"
+                android:layout_height="35dp"/>
 
-    <EditText
-        android:id="@+id/middle_calyx_left_edit"
-        android:hint="@string/mm"
-        android:maxLength="3"
-        android:inputType="number"
-        android:layout_width="50dp"
-        app:layout_constraintLeft_toLeftOf="@id/upper_calyx_left_edit"
-        app:layout_constraintTop_toBottomOf="@id/upper_calyx_left_edit"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/expandable_constraint_layout_left"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/drop_down_left_button"
+                app:layout_constraintLeft_toLeftOf="@id/location_left_text"
+                app:layout_constraintRight_toRightOf="@id/location_left_text"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/lower_calyx_left_edit"
-        android:hint="@string/mm"
-        android:maxLength="3"
-        android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/middle_calyx_left_edit"
-        app:layout_constraintLeft_toLeftOf="@id/middle_calyx_left_edit"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+                <EditText
+                    android:id="@+id/upper_calyx_left_edit"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:hint="@string/mm"
+                    android:maxLength="3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
 
-    <TextView
-        android:id="@+id/lower_calyx_left_text"
-        app:layout_constraintTop_toBottomOf="@id/middle_calyx_left_text"
-        app:layout_constraintLeft_toLeftOf="@id/middle_calyx_left_text"
-        app:layout_constraintTop_toTopOf="@id/lower_calyx_left_edit"
-        app:layout_constraintBottom_toBottomOf="@id/lower_calyx_left_edit"
-        android:text="@string/lower_calyx_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/right_upper_calyx_left_text"
+                    app:layout_constraintTop_toTopOf="@id/upper_calyx_left_edit"
+                    app:layout_constraintBottom_toBottomOf="@id/upper_calyx_left_edit"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="@string/upper_calyx_text"
+                    android:layout_marginLeft="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/pelvis_left_edit"
-        android:hint="@string/mm"
-        android:maxLength="3"
-        android:inputType="number"
-        app:layout_constraintLeft_toLeftOf="@id/lower_calyx_left_edit"
-        app:layout_constraintTop_toBottomOf="@id/lower_calyx_left_edit"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+                <EditText
+                    android:id="@+id/middle_calyx_left_edit"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:hint="@string/mm"
+                    android:maxLength="3"
+                    app:layout_constraintTop_toBottomOf="@id/upper_calyx_left_edit"
+                    app:layout_constraintLeft_toLeftOf="@id/upper_calyx_left_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
 
-    <TextView
-        android:id="@+id/pelvis_left_text"
-        app:layout_constraintTop_toTopOf="@id/pelvis_left_edit"
-        app:layout_constraintBottom_toBottomOf="@id/pelvis_left_edit"
-        app:layout_constraintLeft_toLeftOf="@id/lower_calyx_left_text"
-        android:text="@string/pelvis_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/middle_calyx_left_text"
+                    android:text="@string/middle_calyx_text"
+                    app:layout_constraintLeft_toLeftOf="@id/right_upper_calyx_left_text"
+                    app:layout_constraintTop_toTopOf="@id/middle_calyx_left_edit"
+                    app:layout_constraintBottom_toBottomOf="@id/middle_calyx_left_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/upper_ureter_left_edit"
-        android:hint="@string/mm"
-        android:maxLength="3"
-        android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/pelvis_left_edit"
-        app:layout_constraintLeft_toLeftOf="@id/pelvis_left_edit"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+                <EditText
+                    android:id="@+id/lower_calyx_left_edit"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:hint="@string/mm"
+                    android:maxLength="3"
+                    app:layout_constraintTop_toBottomOf="@id/middle_calyx_left_edit"
+                    app:layout_constraintLeft_toLeftOf="@id/middle_calyx_left_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
 
-    <TextView
-        android:id="@+id/upper_ureter_left_text"
-        app:layout_constraintTop_toTopOf="@id/upper_ureter_left_edit"
-        app:layout_constraintBottom_toBottomOf="@id/upper_ureter_left_edit"
-        app:layout_constraintLeft_toLeftOf="@id/pelvis_left_text"
-        android:text="@string/upper_ureter_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/lower_calyx_left_text"
+                    app:layout_constraintTop_toBottomOf="@id/middle_calyx_left_text"
+                    app:layout_constraintLeft_toLeftOf="@id/middle_calyx_left_text"
+                    app:layout_constraintTop_toTopOf="@id/lower_calyx_left_edit"
+                    app:layout_constraintBottom_toBottomOf="@id/lower_calyx_left_edit"
+                    android:text="@string/lower_calyx_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/middle_ureter_left_edit"
-        android:hint="@string/mm"
-        android:maxLength="3"
-        android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/upper_ureter_left_edit"
-        app:layout_constraintLeft_toLeftOf="@id/upper_ureter_left_edit"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/middle_ureter_left_text"
-        app:layout_constraintTop_toTopOf="@id/middle_ureter_left_edit"
-        app:layout_constraintBottom_toBottomOf="@id/middle_ureter_left_edit"
-        app:layout_constraintLeft_toLeftOf="@id/upper_ureter_left_text"
-        android:text="@string/middle_ureter_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+                <EditText
+                    android:id="@+id/pelvis_left_edit"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:hint="@string/mm"
+                    android:maxLength="3"
+                    app:layout_constraintTop_toBottomOf="@id/lower_calyx_left_edit"
+                    app:layout_constraintLeft_toLeftOf="@id/lower_calyx_left_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
 
-    <EditText
-        android:id="@+id/lower_part_of_the_ureter_left_edit"
-        android:hint="@string/mm"
-        android:maxLength="3"
-        android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/middle_ureter_left_edit"
-        app:layout_constraintLeft_toLeftOf="@id/middle_ureter_left_edit"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/pelvis_left_text"
+                    app:layout_constraintTop_toTopOf="@id/pelvis_left_edit"
+                    app:layout_constraintBottom_toBottomOf="@id/pelvis_left_edit"
+                    app:layout_constraintLeft_toLeftOf="@id/lower_calyx_left_text"
+                    android:text="@string/pelvis_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/lower_part_of_the_ureter_left_text"
-        app:layout_constraintTop_toTopOf="@id/lower_part_of_the_ureter_left_edit"
-        app:layout_constraintBottom_toBottomOf="@id/lower_part_of_the_ureter_left_edit"
-        app:layout_constraintLeft_toLeftOf="@id/middle_ureter_left_text"
-        android:text="@string/lower_part_of_the_ureter_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+                <EditText
+                    android:id="@+id/upper_ureter_left_edit"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:hint="@string/mm"
+                    android:maxLength="3"
+                    app:layout_constraintTop_toBottomOf="@id/pelvis_left_edit"
+                    app:layout_constraintLeft_toLeftOf="@id/pelvis_left_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/upper_ureter_left_text"
+                    app:layout_constraintTop_toTopOf="@id/upper_ureter_left_edit"
+                    app:layout_constraintBottom_toBottomOf="@id/upper_ureter_left_edit"
+                    app:layout_constraintLeft_toLeftOf="@id/pelvis_left_text"
+                    android:text="@string/upper_ureter_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints" />
+
+                <EditText
+                    android:id="@+id/middle_ureter_left_edit"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:hint="@string/mm"
+                    android:maxLength="3"
+                    app:layout_constraintTop_toBottomOf="@id/upper_ureter_left_edit"
+                    app:layout_constraintLeft_toLeftOf="@id/upper_ureter_left_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/middle_ureter_left_text"
+                    app:layout_constraintTop_toTopOf="@id/middle_ureter_left_edit"
+                    app:layout_constraintBottom_toBottomOf="@id/middle_ureter_left_edit"
+                    app:layout_constraintLeft_toLeftOf="@id/upper_ureter_left_text"
+                    android:text="@string/middle_ureter_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints" />
+
+                <EditText
+                    android:id="@+id/lower_part_of_the_ureter_left_edit"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:hint="@string/mm"
+                    android:maxLength="3"
+                    app:layout_constraintTop_toBottomOf="@id/middle_ureter_left_edit"
+                    app:layout_constraintLeft_toLeftOf="@id/middle_ureter_left_edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RtlCompat" />
+
+
+                <TextView
+                    android:id="@+id/lower_part_of_the_ureter_text"
+                    app:layout_constraintTop_toTopOf="@id/lower_part_of_the_ureter_left_edit"
+                    app:layout_constraintBottom_toBottomOf="@id/lower_part_of_the_ureter_left_edit"
+                    app:layout_constraintLeft_toLeftOf="@id/middle_ureter_left_text"
+                    android:text="@string/lower_part_of_the_ureter_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

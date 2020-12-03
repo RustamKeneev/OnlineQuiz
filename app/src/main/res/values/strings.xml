@@ -9,11 +9,15 @@
     <string name="pelvis_text">Почечная лоханка</string>
     <string name="upper_ureter_text">Верхний отдел мочеточника</string>
     <string name="middle_ureter_text">Средний отдел мочеточника</string>
-    <string name="lower_part_of_the_ureter_text">Нижний (дистальный) отдел мочеточника</string>
+    <string name="lower_part_of_the_ureter_text">Нижний (дистальный) \nотдел мочеточника</string>
     <string name="bladder_text">Мочевой пузырь</string>
     <string name="by_clinic_text">По клинике</string>
     <string name="primary_text">Первичный</string>
     <string name="recurrent_text">Рецидивный</string>
     <string name="infected_text">Инфицированный</string>
     <string name="not_infected_text">Не инфицированный</string>
+    <string name="location_stone_right_text">По локализации конкремента справа</string>
+    <string name="location_stone_left_text">По локализации конкремента слева</string>
+    <string name="by_x_ray_characteristics_text">По рентгенологической характеристике</string>
+    <string name="by_etiology_text">По этиологии</string>
 </resources>

@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_stone_location"
-    tools:context=".StoneLocationFragment">
+    tools:context=".fragments.StoneLocationFragment">
 
     <include
         layout="@layout/layout_stone_location_right"/>
