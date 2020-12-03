@@ -7,4 +7,13 @@
     <string name="middle_calyx_text">Средняя чашечка</string>
     <string name="lower_calyx_text">Нижняя чашечка</string>
     <string name="pelvis_text">Почечная лоханка</string>
+    <string name="upper_ureter_text">Верхний отдел мочеточника</string>
+    <string name="middle_ureter_text">Средний отдел мочеточника</string>
+    <string name="lower_part_of_the_ureter_text">Нижний (дистальный) отдел мочеточника</string>
+    <string name="bladder_text">Мочевой пузырь</string>
+    <string name="by_clinic_text">По клинике</string>
+    <string name="primary_text">Первичный</string>
+    <string name="recurrent_text">Рецидивный</string>
+    <string name="infected_text">Инфицированный</string>
+    <string name="not_infected_text">Не инфицированный</string>
 </resources>

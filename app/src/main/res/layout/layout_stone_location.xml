@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/location_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        android:textAllCaps="true"
+        android:text="По локализации конкремента"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/bladder_text"
+        app:layout_constraintTop_toTopOf="@id/bladder_edit"
+        app:layout_constraintBottom_toBottomOf="@id/bladder_edit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="8dp"
+        android:layout_margin="8dp"
+        android:text="@string/bladder_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/bladder_edit"
+        app:layout_constraintTop_toBottomOf="@id/location_text"
+        android:layout_marginTop="8dp"
+        android:hint="@string/mm"
+        android:maxLength="3"
+        android:inputType="number"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/urethra_text"
+        android:text="@string/middle_calyx_text"
+        app:layout_constraintLeft_toLeftOf="@id/bladder_text"
+        app:layout_constraintTop_toTopOf="@id/urethra_edit"
+        app:layout_constraintBottom_toBottomOf="@id/urethra_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/urethra_edit"
+        android:hint="@string/mm"
+        android:maxLength="3"
+        android:inputType="number"
+        android:layout_width="50dp"
+        app:layout_constraintLeft_toLeftOf="@id/bladder_edit"
+        app:layout_constraintTop_toBottomOf="@id/bladder_edit"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
