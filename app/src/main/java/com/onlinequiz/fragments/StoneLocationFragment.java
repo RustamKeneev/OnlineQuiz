@@ -8,12 +8,15 @@ import androidx.fragment.app.Fragment;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.onlinequiz.R;
 
@@ -32,6 +35,16 @@ public class StoneLocationFragment extends Fragment {
     private CardView mCardViewStoneLocation;
     private CardView mCardViewStoneByClinic;
 
+
+
+    private Button mStoneResultButton;
+    public EditText mUpperCalyxRightEdit;
+
+    String result = "";
+    String details = "";
+    int single = 0;
+
+
     public StoneLocationFragment() {
         // Required empty public constructor
     }
@@ -41,6 +54,22 @@ public class StoneLocationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_stone_location, container, false);
+
+//        mStoneResultButton = (Button) view.findViewById(R.id.stone_result_button);
+        mUpperCalyxRightEdit = (EditText) view.findViewById(R.id.upper_calyx_right_edit);
+
+//        mStoneResultButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                int mUpperCalyxRight = Integer.parseInt(mUpperCalyxRightEdit.getText().toString().trim());
+//                if (mUpperCalyxRight>0){
+//                    details += "Камень верхней чашечки справа с размером " + mUpperCalyxRight;
+//                    Log.d("ololo", "onClick: " + details.length());
+//                }
+//
+//            }
+//        });
+
 
         mExpandableLayoutRight = view.findViewById(R.id.expandable_constraint_layout_right);
         mExpandableLayoutLeft = view.findViewById(R.id.expandable_constraint_layout_left);
