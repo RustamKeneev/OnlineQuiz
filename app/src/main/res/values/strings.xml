@@ -20,4 +20,18 @@
     <string name="location_stone_left_text">По локализации конкремента слева</string>
     <string name="by_x_ray_characteristics_text">По рентгенологической характеристике</string>
     <string name="by_etiology_text">По этиологии</string>
+    <string name="x_ray_contrast_stone">Рентгеноконтрасный камень</string>
+    <string name="calcium_oxalate_dihydrate_checkbox_text">Дигидрат оксалат кальция</string>
+    <string name="calcium_oxalate_monohydrate_checkbox_text">Моногидрат оксалат кальция</string>
+    <string name="calcium_phosphate_checkbox_text">Фосфат кальция</string>
+    <string name="low_radiopacity_text">Низкая рентгеноконтрастность</string>
+    <string name="magnesium_ammonium_phosphate_checkbox_text">Фосфат магния и аммония</string>
+    <string name="apatite_checkbox_text">Апатит</string>
+    <string name="cystine_checkbox_text">Цистин</string>
+    <string name="x_ray_negative_calculus_text">Рентгенонегативный конкремент</string>
+    <string name="uric_acid_checkbox_text">Мочевая кислота</string>
+    <string name="ammonium_urate_checkbox_text">Урат аммония</string>
+    <string name="xanthine_checkbox_text">Ксантин</string>
+    <string name="dihydroxyadenine_checkbox_text">2,8-дигидроксиаденин</string>
+    <string name="medicinal_stones_checkbox_text">Лекарственные камни</string>
 </resources>

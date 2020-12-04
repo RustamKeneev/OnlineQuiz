@@ -1,8 +1,10 @@
 package com.onlinequiz;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +12,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button mUrolithiasizButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

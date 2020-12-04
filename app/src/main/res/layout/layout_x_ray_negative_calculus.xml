@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/x_ray_negative_calculus_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/x_ray_negative_calculus_text"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/uric_acid_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/x_ray_negative_calculus_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/uric_acid_checkbox_text"
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/ammonium_urate_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/uric_acid_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/uric_acid_checkbox"
+        android:text="@string/ammonium_urate_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/xanthine_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/ammonium_urate_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/ammonium_urate_checkbox"
+        android:text="@string/xanthine_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/dihydroxyadenine_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/xanthine_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/xanthine_checkbox"
+        android:text="@string/dihydroxyadenine_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/medicinal_stones_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/dihydroxyadenine_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/dihydroxyadenine_checkbox"
+        android:text="@string/medicinal_stones_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

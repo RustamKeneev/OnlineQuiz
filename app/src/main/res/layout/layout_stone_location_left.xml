@@ -24,7 +24,6 @@
                 android:id="@+id/location_left_text"
                 android:text="@string/location_stone_left_text"
                 android:layout_margin="8dp"
-                android:textAllCaps="true"
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"

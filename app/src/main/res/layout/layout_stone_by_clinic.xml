@@ -27,7 +27,6 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 android:layout_margin="8dp"
-                android:textAllCaps="true"
                 android:text="@string/by_clinic_text"
                 android:textStyle="bold"
                 android:layout_width="0dp"

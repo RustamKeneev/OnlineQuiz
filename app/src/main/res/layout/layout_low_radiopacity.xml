@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/low_radiopacity_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/low_radiopacity_text"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/magnesium_ammonium_phosphate_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/low_radiopacity_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/magnesium_ammonium_phosphate_checkbox_text"
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/apatite_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/magnesium_ammonium_phosphate_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/magnesium_ammonium_phosphate_checkbox"
+        android:text="@string/apatite_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/cystine_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/apatite_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/apatite_checkbox"
+        android:text="@string/cystine_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
