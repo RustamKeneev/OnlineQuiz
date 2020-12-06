@@ -43,6 +43,9 @@ public class ThirdActivity extends AppCompatActivity {
 
     //Stone By Clinic
     private MaterialCheckBox mPrimaryCheckbox;
+    private MaterialCheckBox mRecurrentCheckbox;
+    private MaterialCheckBox InfectedCheckbox;
+    private MaterialCheckBox mNotInfectedCheckbox;
 
 
     Boolean mXRayStoneCheckbox;
@@ -119,6 +122,9 @@ public class ThirdActivity extends AppCompatActivity {
 
                 //STONE BY CLINIC
                 mPrimaryCheckbox = findViewById(R.id.primary_checkbox);
+                mRecurrentCheckbox = findViewById(R.id.recurrent_checkbox);
+                InfectedCheckbox = findViewById(R.id.infected_checkbox);
+                mNotInfectedCheckbox = findViewById(R.id.not_infected_checkbox);
 
                 try {
                     //RIGHT STONE LOCATION
@@ -271,6 +277,15 @@ public class ThirdActivity extends AppCompatActivity {
                     if (mPrimaryCheckbox.isChecked()){
                         clinic += "первичный ";
                     }
+                    if (mRecurrentCheckbox.isChecked()){
+                        clinic += "рецидивный ";
+                    }
+                    if (InfectedCheckbox.isChecked()){
+                        clinic += "инфицированный ";
+                    }
+                    if (mNotInfectedCheckbox.isChecked()){
+                        clinic += "неинфицированный ";
+                    }
 
 
                 }catch (NumberFormatException e){
@@ -293,6 +308,7 @@ public class ThirdActivity extends AppCompatActivity {
                 intent.putExtra("result",result);
                 intent.putExtra("details",details);
                 intent.putExtra("clinic",clinic1);
+//                intent.putExtra("clinic",mPrimaryCheckbox.isChecked());
                 startActivity(intent);
 //                Log.d("ololo", "onClick: " +details);
 //                Log.d("ololo", "onClick: " +result);

@@ -27,6 +27,9 @@
 
     <LinearLayout
         android:id="@+id/fragment_linear_layout"
+        app:layout_constraintTop_toBottomOf="@id/details_text"
+        app:layout_constraintLeft_toLeftOf="@id/details_text"
+        app:layout_constraintRight_toRightOf="@id/details_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints,Orientation">
