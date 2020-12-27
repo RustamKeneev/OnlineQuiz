@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/chemical_structure_stone_text_title"
+        android:text="@string/chemical_structure_stone_text_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/monohydrate_oxalate_checkbox"
+        android:text="@string/monohydrate_oxalate_checkbox_text"
+        app:layout_constraintTop_toBottomOf="@id/chemical_structure_stone_text_title"
+        app:layout_constraintLeft_toLeftOf="@id/chemical_structure_stone_text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/unknown_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/monohydrate_oxalate_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/monohydrate_oxalate_checkbox"
+        android:text="@string/unknown_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/phosphate_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/unknown_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/unknown_checkbox"
+        android:text="@string/phosphate_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/dihydrate_oxalate_checkbox"
+        android:text="@string/dihydrate_oxalate_checkbox_text"
+        app:layout_constraintTop_toBottomOf="@id/phosphate_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/phosphate_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/urate_checkbox"
+        android:text="@string/urate_checkbox_text"
+        app:layout_constraintTop_toBottomOf="@id/dihydrate_oxalate_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/dihydrate_oxalate_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/mixed_checkbox"
+        android:text="@string/mixed_checkbox_text"
+        app:layout_constraintTop_toBottomOf="@id/urate_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/urate_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

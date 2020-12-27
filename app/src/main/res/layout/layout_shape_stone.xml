@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/shape_stone_text_title"
+        android:text="@string/shape_stone_text_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/smooth_oval_or_round_checkbox"
+        android:text="@string/smooth_oval_or_round_checkbox_text"
+        app:layout_constraintTop_toBottomOf="@id/shape_stone_text_title"
+        app:layout_constraintLeft_toLeftOf="@id/shape_stone_text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/irregular_prickly_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/smooth_oval_or_round_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/smooth_oval_or_round_checkbox"
+        android:text="@string/irregular_prickly_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

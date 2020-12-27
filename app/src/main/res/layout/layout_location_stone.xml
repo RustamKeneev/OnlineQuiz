@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/location_stone_text_title"
+        android:text="@string/location_stone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/localization_stone_unknown_checkbox"
+        android:text="@string/localization_stone_unknown_checkbox_text"
+        app:layout_constraintTop_toBottomOf="@id/location_stone_text_title"
+        app:layout_constraintLeft_toLeftOf="@id/location_stone_text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/upper_calyx_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/localization_stone_unknown_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/localization_stone_unknown_checkbox"
+        android:text="@string/upper_calyx_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/middle_calyx_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/upper_calyx_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/upper_calyx_checkbox"
+        android:text="@string/middle_calyx_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/lower_calyx_checkbox"
+        android:text="@string/lower_calyx_text"
+        app:layout_constraintTop_toBottomOf="@id/middle_calyx_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/middle_calyx_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/pelvis_checkbox"
+        android:text="@string/pelvis_text"
+        app:layout_constraintTop_toBottomOf="@id/lower_calyx_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/lower_calyx_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/lms_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/pelvis_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/pelvis_checkbox"
+        android:text="@string/lms_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/upper_ureter_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/lms_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/lms_checkbox"
+        android:text="@string/upper_ureter_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/middle_ureter_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/upper_ureter_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/upper_ureter_checkbox"
+        android:text="@string/middle_ureter_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/lower_part_of_the_ureter_one_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/middle_ureter_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/upper_ureter_checkbox"
+        android:text="Нижняя треть на уровне костного тазового кольца"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/lower_part_of_the_ureter_two_checkbox"
+        android:text="Нижняя треть вне тазового кольца"
+        app:layout_constraintTop_toBottomOf="@id/lower_part_of_the_ureter_one_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/lower_part_of_the_ureter_one_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/lower_part_of_the_ureter_three_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/lower_part_of_the_ureter_two_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/lower_part_of_the_ureter_two_checkbox"
+        android:text="Предпузырный, интрамуральный отдел мочеточника"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

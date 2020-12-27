@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TestByBallsActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/layout_location_stone"/>
+
+        <include
+            layout="@layout/layout_visualization_stone"/>
+
+        <include
+            layout="@layout/layout_size_stone"/>
+
+        <include
+            layout="@layout/layout_shape_stone"/>
+
+        <include
+            layout="@layout/layout_density_stone"/>
+
+        <include
+            layout="@layout/layout_intensity_stone"/>
+
+        <include
+            layout="@layout/layout_clarity_contours_stone"/>
+
+        <include
+            layout="@layout/layout_having_enlightenment_stone"/>
+
+        <include
+            layout="@layout/layout_chemical_structure_stone"/>
+
+        <include
+            layout="@layout/layout_standing_duration_stone"/>
+
+        <include
+            layout="@layout/layout_renal_parenchyma_thickness"/>
+
+        <include
+            layout="@layout/layout_contractile_ability_ureter"/>
+
+        <include
+            layout="@layout/layout_cicatrical_periureterit"/>
+
+        <include
+            layout="@layout/layout_fixed_kink"/>
+
+        <include
+            layout="@layout/layout_fixed_kink_ureter"/>
+
+        <include
+            layout="@layout/layout_multiple_obstruction"/>
+
+        <include
+            layout="@layout/layout_ureterocele"/>
+
+        <include
+            layout="@layout/layout_bph"/>
+
+        <include
+            layout="@layout/layout_cystocele"/>
+
+        <include
+            layout="@layout/layout_ureteral_compression"/>
+
+        <include
+            layout="@layout/layout_malignant_tumor_kidney"/>
+
+        <include
+            layout="@layout/layout_angiomyolipoma_kidney"/>
+
+        <include
+            layout="@layout/layout_malignant_tumor"/>
+
+        <include
+            layout="@layout/layout_degree_subcutaneous_fat"/>
+
+        <include
+            layout="@layout/layout_availability_of_drainage"/>
+
+        <include
+            layout="@layout/layout_aneurysm"/>
+
+        <include
+            layout="@layout/layout_coagulation_disorders"/>
+
+        <include
+            layout="@layout/layout_pregnancy"/>
+
+        <include
+            layout="@layout/layout_general_somatic_status"/>
+
+        <include
+            layout="@layout/layout_serous_pyelonephritis"/>
+
+        <include
+            layout="@layout/layout_purulent_pyelonephritis"/>
+
+        <include
+            layout="@layout/layout_intractable_ipain_syndrome"/>
+
+        <include
+            layout="@layout/layout_renal_colic"/>
+
+        <include
+            layout="@layout/layout_lack_of_effect_therapy"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

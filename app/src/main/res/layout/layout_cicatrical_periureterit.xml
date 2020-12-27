@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/cicatrical_periureterit_text_title"
+        android:text="@string/cicatrical_periureterit_text_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/first_cicatrical_checkbox"
+        android:text="@string/first_cicatrical_checkbox_text"
+        app:layout_constraintTop_toBottomOf="@id/cicatrical_periureterit_text_title"
+        app:layout_constraintLeft_toLeftOf="@id/cicatrical_periureterit_text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/second_cicatrical_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/first_cicatrical_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/first_cicatrical_checkbox"
+        android:text="@string/second_cicatrical_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/third_cicatrical_checkbox"
+        android:text="@string/third_cicatrical_checkbox_text"
+        app:layout_constraintTop_toBottomOf="@id/second_cicatrical_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/second_cicatrical_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/fourth_cicatrical_checkbox"
+        android:text="@string/fourth_cicatrical_checkbox_text"
+        app:layout_constraintTop_toBottomOf="@id/third_cicatrical_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/third_cicatrical_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/fifth_cicatrical_checkbox"
+        android:text="@string/fifth_cicatrical_checkbox_text"
+        app:layout_constraintTop_toBottomOf="@id/fourth_cicatrical_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/fourth_cicatrical_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/location_stone_text_title"
+        android:text="@string/possibility_and_way_of_visualizing_a_stone_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/non_visualizing_checkbox"
+        android:text="@string/non_visualizing_checkbox_text"
+        app:layout_constraintTop_toBottomOf="@id/location_stone_text_title"
+        app:layout_constraintLeft_toLeftOf="@id/location_stone_text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/located_during_ultrasound_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/non_visualizing_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/non_visualizing_checkbox"
+        android:text="@string/located_during_ultrasound_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/radiopaque_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/located_during_ultrasound_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/located_during_ultrasound_checkbox"
+        android:text="@string/radiopaque_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/x_ray_negative_checkbox"
+        android:text="@string/x_ray_negative_checkbox_text"
+        app:layout_constraintTop_toBottomOf="@id/radiopaque_checkbox"
+        app:layout_constraintLeft_toLeftOf="@id/radiopaque_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

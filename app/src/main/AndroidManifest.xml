@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineQuiz">
-        <activity android:name=".ResultActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".TestByBallsActivity" android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".ResultActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ThirdActivity"
             android:screenOrientation="portrait" />
