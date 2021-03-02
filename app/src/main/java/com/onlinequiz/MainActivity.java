@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         mUrolithiasizButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,TestByBallsActivity.class));
+                startActivity(new Intent(MainActivity.this,SecondActivity.class));
             }
         });
     }
