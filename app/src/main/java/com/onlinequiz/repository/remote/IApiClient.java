@@ -1,5 +1,7 @@
 package com.onlinequiz.repository.remote;
 
-public interface IApiClient {
+import com.onlinequiz.repository.IRepository;
 
+public interface IApiClient {
+    void getCategories(IRepository.CategoryCallback categoryCallback);
 }

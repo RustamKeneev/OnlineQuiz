@@ -13,4 +13,8 @@ public class Repository implements IRepository{
         this.localStorage = localStorage;
     }
 
+    @Override
+    public void getCategory(CategoryCallback categoryCallback) {
+        apiClient.getCategories(categoryCallback);
+    }
 }
