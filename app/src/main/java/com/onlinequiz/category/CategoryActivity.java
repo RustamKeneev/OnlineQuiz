@@ -47,7 +47,8 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViewH
 
     private void initViews() {
         mRecyclerView = findViewById(R.id.category_recycler);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
+                LinearLayoutManager.HORIZONTAL,false));
         mAdapter = new CategoryAdapter(this);
         mRecyclerView.setAdapter(mAdapter);
     }
