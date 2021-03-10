@@ -12,6 +12,7 @@ import com.onlinequiz.R;
 import com.onlinequiz.category.recycler.CategoryAdapter;
 import com.onlinequiz.category.recycler.CategoryViewHolder;
 import com.onlinequiz.model.Category;
+import com.onlinequiz.sub_category.SubCategoryActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +55,6 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViewH
 
     @Override
     public void onClick(String categoryId, String categoryTitle) {
-
+        SubCategoryActivity.startActivity(this,String.valueOf(categoryId),String.valueOf(categoryTitle));
     }
 }
