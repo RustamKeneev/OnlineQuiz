@@ -16,8 +16,8 @@ public class Category {
     @SerializedName("name")
     private String categoryName;
 
-    @SerializedName("categories")
-    private String category;
+    /*@SerializedName("categories")
+    private String category;*/
 
     public Category() {
     }
@@ -25,7 +25,7 @@ public class Category {
     public Category(String categoryId, String categoryName, String category) {
         this.categoryId = categoryId;
         this.categoryName = categoryName;
-        this.category = category;
+       /* this.category = category;*/
     }
 
     public String getCategoryId() {
@@ -44,11 +44,11 @@ public class Category {
         this.categoryName = categoryName;
     }
 
-    public String getCategory() {
+    /*public String getCategory() {
         return category;
-    }
+    }*/
 
-    public void setCategory(String category) {
+    /*public void setCategory(String category) {
         this.category = category;
-    }
+    }*/
 }

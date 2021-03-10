@@ -25,6 +25,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         iSharedStorage = new SharedStorage(this,"pref");
         appPreferences = new AppPreferences(iSharedStorage);
         apiClient = new ApiClient();

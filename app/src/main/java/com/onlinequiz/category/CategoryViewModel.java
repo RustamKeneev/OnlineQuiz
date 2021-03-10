@@ -15,6 +15,7 @@ public class CategoryViewModel extends ViewModel {
     public MutableLiveData<List<Category>> categoryLiveData = new MutableLiveData<>();
 
     public void getCategory(){
+        Log.d("here " , "here");
         App.iRepository.getCategory(new IRepository.CategoryCallback() {
             @Override
             public void onSuccess(List<Category> categories) {
@@ -24,7 +25,7 @@ public class CategoryViewModel extends ViewModel {
 
             @Override
             public void onFailure(Exception e) {
-
+                Log.d("here ", e.getMessage());
             }
         });
     }

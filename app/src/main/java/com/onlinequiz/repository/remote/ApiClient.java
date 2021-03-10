@@ -3,9 +3,11 @@ package com.onlinequiz.repository.remote;
 import com.onlinequiz.model.Category;
 import com.onlinequiz.repository.IRepository;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.ConnectionSpec;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -26,6 +28,8 @@ public class ApiClient implements IApiClient{
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
             .build();
+
+
 
     private HttpLoggingInterceptor provideLoggingInterceptor() {
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
