@@ -1,6 +1,7 @@
 package com.onlinequiz.model;
 
 import androidx.annotation.NonNull;
+import androidx.room.Database;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
