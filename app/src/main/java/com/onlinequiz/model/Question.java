@@ -1,14 +1,17 @@
 package com.onlinequiz.model;
 
 import androidx.annotation.NonNull;
-import androidx.room.Database;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
 
 import com.google.gson.annotations.SerializedName;
+import com.onlinequiz.utils.DescriptionConverter;
+
+import java.util.List;
 
 @Entity(tableName = "sub_categories")
-public class SubCategory {
+public class Question {
     @PrimaryKey
     @SerializedName("id")
     @NonNull
@@ -18,22 +21,28 @@ public class SubCategory {
     private String subCategoryName;
 
     @SerializedName("options")
-    private String getSubCategoryOption;
+    @TypeConverters({DescriptionConverter.class})
+    List<Description> descriptionList;
 
-    public SubCategory() {
+    public Question() {
     }
 
-    public SubCategory(String subCategoryId, String subCategoryName, String getSubCategoryOption) {
+    public List<Description> getDescriptionList() {
+        return descriptionList;
+    }
+
+    public Question(@NonNull String subCategoryId, String subCategoryName, List<Description> descriptionList) {
         this.subCategoryId = subCategoryId;
         this.subCategoryName = subCategoryName;
-        this.getSubCategoryOption = getSubCategoryOption;
+        this.descriptionList = descriptionList;
     }
 
+    @NonNull
     public String getSubCategoryId() {
         return subCategoryId;
     }
 
-    public void setSubCategoryId(String subCategoryId) {
+    public void setSubCategoryId(@NonNull String subCategoryId) {
         this.subCategoryId = subCategoryId;
     }
 
@@ -45,11 +54,8 @@ public class SubCategory {
         this.subCategoryName = subCategoryName;
     }
 
-    public String getGetSubCategoryOption() {
-        return getSubCategoryOption;
-    }
 
-    public void setGetSubCategoryOption(String getSubCategoryOption) {
-        this.getSubCategoryOption = getSubCategoryOption;
+    public void setDescriptionList(List<Description> descriptionList) {
+        this.descriptionList = descriptionList;
     }
 }

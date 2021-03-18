@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineQuiz"
         android:usesCleartextTraffic="true">
-        <activity android:name=".sub_category.SubCategoryActivity"></activity>
+        <activity android:name=".question.QuestionActivity"></activity>
+        <activity android:name=".test_sucategory.TestSubCategoryActivity" />
+        <activity android:name=".sub_category.SubCategoryActivity" />
         <activity
             android:name=".category.CategoryActivity"
             android:screenOrientation="portrait">

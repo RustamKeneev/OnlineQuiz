@@ -6,7 +6,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
+        android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -26,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/icon_tree">
             <!-- название -->
-            <TextView
+            <CheckBox
                 android:id="@+id/value_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

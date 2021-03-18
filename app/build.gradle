@@ -63,6 +63,9 @@ dependencies {
 
     compile 'com.github.grennis:ExpandableRecyclerView:0.9.3'
 
+    compile 'com.thoughtbot:expandablerecyclerview:1.4'
+    compile 'com.thoughtbot:expandablecheckrecyclerview:1.4'
+
 
 
 }

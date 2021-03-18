@@ -11,7 +11,6 @@ import android.os.Bundle;
 
 import com.onlinequiz.R;
 import com.onlinequiz.model.Data;
-import com.onlinequiz.model.SubCategory;
 import com.onlinequiz.test.RecyclerViewAdapter;
 
 import java.util.ArrayList;

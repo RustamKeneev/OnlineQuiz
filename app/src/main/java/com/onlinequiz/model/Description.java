@@ -1,16 +1,24 @@
 package com.onlinequiz.model;
 
-public class Description {
-    private String id;
-    private String descriptionName;
-    private String description;
+import com.google.gson.annotations.SerializedName;
+import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
+import java.util.List;
+
+public class Description {
+    @SerializedName("id")
+    private String id;
+
+    @SerializedName("name")
+    private String descriptionName;
+
+    @SerializedName("description")
+    private String description;
 
     public Description() {
     }
 
-    public Description(String id, String descriptionName, String description) {
-        this.id = id;
+    public Description(String descriptionName, String description) {
         this.descriptionName = descriptionName;
         this.description = description;
     }

@@ -6,13 +6,16 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.onlinequiz.R;
 import com.onlinequiz.category.recycler.CategoryAdapter;
 import com.onlinequiz.category.recycler.CategoryViewHolder;
 import com.onlinequiz.model.Category;
+import com.onlinequiz.question.QuestionActivity;
 import com.onlinequiz.sub_category.SubCategoryActivity;
+import com.onlinequiz.test_sucategory.TestSubCategoryActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +58,8 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViewH
 
     @Override
     public void onClick(String categoryId, String categoryTitle) {
-        SubCategoryActivity.startActivity(this,String.valueOf(categoryId),String.valueOf(categoryTitle));
+//        SubCategoryActivity.startActivity(this,String.valueOf(categoryId),String.valueOf(categoryTitle));
+        Intent intent = new Intent(this, QuestionActivity.class);
+        startActivity(intent);
     }
 }

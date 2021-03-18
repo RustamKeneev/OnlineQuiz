@@ -6,7 +6,7 @@ public final class Data {
 
     private boolean itemParent = false; //родительский или нет элемент
     private int parentId = -1; //id элемента, который является родительским
-    private boolean childVisibility = false; //видимость дочерних элементов
+    private boolean childVisibility = true; //видимость дочерних элементов
 
     //проверить родительский элемент или нет
     public boolean isItemParent() {

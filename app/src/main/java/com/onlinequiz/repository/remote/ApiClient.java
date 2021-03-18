@@ -1,6 +1,7 @@
 package com.onlinequiz.repository.remote;
 
 import com.onlinequiz.model.Category;
+import com.onlinequiz.model.Question;
 import com.onlinequiz.repository.IRepository;
 
 import java.util.List;
@@ -17,7 +18,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public class ApiClient implements IApiClient{
-    private final String BASE_URL = "http://185.43.5.50:8001";
+    private final String BASE_URL = "http://78.24.223.72/";
 
     private OkHttpClient okHttpClient = new OkHttpClient()
             .newBuilder()
@@ -68,9 +69,36 @@ public class ApiClient implements IApiClient{
         });
     }
 
+    @Override
+    public void getQuestions(IRepository.CallBack<List<Question>> callBack) {
+        Call<List<Question>> call = client.getQuestions();
+        call.enqueue(new Callback<List<Question>>() {
+            @Override
+            public void onResponse(Call<List<Question>> call, Response<List<Question>> response) {
+                if (response.isSuccessful()){
+                    if (response.body() !=null){
+                        callBack.onSuccess(response.body());
+                    }else {
+                        callBack.onFailure(new Exception("Question response is empty"));
+                    }
+                }else {
+                    callBack.onFailure(new Exception("Response code Question" + response.code()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Question>> call, Throwable t) {
+                callBack.onFailure(new Exception(t));
+            }
+        });
+    }
+
     private interface QuizNetworkClient{
         @GET("/api/quiz/")
         Call<List<Category>> getAllCategories();
+
+        @GET("/api/quiz/")
+        Call<List<Question>> getQuestions();
     }
 
 }
