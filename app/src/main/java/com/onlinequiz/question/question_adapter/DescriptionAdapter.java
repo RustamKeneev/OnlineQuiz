@@ -3,6 +3,7 @@ package com.onlinequiz.question.question_adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,10 +44,12 @@ public class DescriptionAdapter  extends RecyclerView.Adapter<DescriptionAdapter
     }
 
     class DescriptionViewHolder extends RecyclerView.ViewHolder {
+        CheckBox checkBox;
         TextView tvSubItemTitle;
 
         DescriptionViewHolder(View itemView) {
             super(itemView);
+            checkBox = itemView.findViewById(R.id.description_checkbox);
             tvSubItemTitle = itemView.findViewById(R.id.tv_sub_item_title);
         }
     }

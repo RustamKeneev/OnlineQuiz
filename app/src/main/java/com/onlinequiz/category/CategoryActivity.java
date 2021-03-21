@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.onlinequiz.R;
 import com.onlinequiz.category.recycler.CategoryAdapter;
@@ -45,6 +46,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViewH
                 mAdapter.setData(categories);
                 mCategories = new ArrayList<>();
                 mCategories.addAll(categories);
+//                Log.d("ololo11", categories.get(0).getCategory().getSubCategoryName());
             }
         });
     }
@@ -57,7 +59,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViewH
     }
 
     @Override
-    public void onClick(String categoryId, String categoryTitle) {
+    public void onClick(int categoryId, String categoryTitle) {
 //        SubCategoryActivity.startActivity(this,String.valueOf(categoryId),String.valueOf(categoryTitle));
         Intent intent = new Intent(this, QuestionActivity.class);
         startActivity(intent);

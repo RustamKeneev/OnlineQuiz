@@ -5,70 +5,54 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.util.Log;
-
 import com.onlinequiz.R;
-import com.onlinequiz.model.Description;
-import com.onlinequiz.model.Question;
+import com.onlinequiz.category.CategoryViewModel;
+import com.onlinequiz.model.Category;
 import com.onlinequiz.question.question_adapter.QuestionAdapter;
-import com.onlinequiz.test_sucategory.Item;
-import com.onlinequiz.test_sucategory.ItemAdapter;
-import com.onlinequiz.test_sucategory.SubItem;
-import com.onlinequiz.test_sucategory.TestSubCategoryActivity;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionActivity extends AppCompatActivity {
 
     private RecyclerView rvItem;
-    QuestionViewModel viewModel;
+    CategoryViewModel viewModel;
+    QuestionViewModel questionViewModel;
+    LinearLayoutManager layoutManager;
+    QuestionAdapter questionAdapter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+        rvItem = findViewById(R.id.rv_questions);
+        layoutManager = new LinearLayoutManager(QuestionActivity.this);
         initViews();
         initModels();
     }
 
     private void initModels() {
-        viewModel = ViewModelProviders.of(this).get(QuestionViewModel.class);
-        viewModel.getQuestion();
-        viewModel.questionMutableLiveData.observe(this, new Observer<Question>() {
+        viewModel = ViewModelProviders.of(this).get(CategoryViewModel.class);
+        questionViewModel = ViewModelProviders.of(this).get(QuestionViewModel.class);
+        viewModel.getCategory();
+        viewModel.categoryLiveData.observe(this, new Observer<List<Category>>() {
             @Override
-            public void onChanged(Question question) {
-                Log.d("TAG", "onChanged: " + question.getSubCategoryName());
+            public void onChanged(List<Category> categories) {
+                Log.d("TAG", "onChanged: Question " + categories.size());
+            }
+        });
+        questionViewModel.getCategory();
+        questionViewModel.categoryLiveData.observe(this, new Observer<List<Category>>() {
+            @Override
+            public void onChanged(List<Category> categories) {
+                questionAdapter = new QuestionAdapter(categories.get(0).getCategory());
+                rvItem.setLayoutManager(layoutManager);
+                rvItem.setAdapter(questionAdapter);
             }
         });
     }
 
     private void initViews() {
-        rvItem = findViewById(R.id.rv_item);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(QuestionActivity.this);
-//        QuestionAdapter questionAdapter = new QuestionAdapter(buildItemList());
-//        rvItem.setAdapter(questionAdapter);
-//        rvItem.setLayoutManager(layoutManager);
     }
-
-//    private List<Question> buildItemList() {
-//        List<Question> itemList = new ArrayList<>();
-//        for (int i = 1; i <= 10; i++) {
-//            Question item = new Question("Id:" + i, "Name:" + i, buildSubItemList());
-//            itemList.add(item);
-//        }
-//        return itemList;
-//    }
-//
-//    private List<Description> buildSubItemList() {
-//        List<Description> subItemList = new ArrayList<>();
-//        for (int i = 1; i <= 5; i++) {
-//            Description subItem = new Description("Кнопка для ответа " + i, "Подробнее " + i);
-//            subItemList.add(subItem);
-//        }
-//        return subItemList;
-//    }
 }

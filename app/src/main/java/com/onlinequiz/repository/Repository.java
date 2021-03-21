@@ -22,7 +22,9 @@ public class Repository implements IRepository{
     }
 
     @Override
-    public void getQuestions(CallBack<List<Question>> callBack) {
+    public void getQuestions( CallBack<List<Question>> callBack) {
         apiClient.getQuestions(callBack);
     }
+
+
 }

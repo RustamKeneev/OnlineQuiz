@@ -2,37 +2,43 @@ package com.onlinequiz.model;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
 
 import com.google.gson.annotations.SerializedName;
+import com.onlinequiz.utils.DescriptionConverter;
+import com.onlinequiz.utils.QuestionConverter;
+
+import java.util.List;
 
 @Entity(tableName = "category")
 public class Category {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @SerializedName("id")
-    @NonNull
-    private String categoryId;
+    private int categoryId;
     @SerializedName("name")
     private String categoryName;
 
-//    @SerializedName("categories")
-//    private String category;
+    @SerializedName("categories")
+    @TypeConverters({QuestionConverter.class})
+    public List<Question> categories;
 
     public Category() {
     }
 
-    public Category(String categoryId, String categoryName, String category) {
+    public Category(int categoryId, String categoryName, List<Question> categories) {
         this.categoryId = categoryId;
         this.categoryName = categoryName;
-//        this.category = category;
+        this.categories = categories;
     }
 
-    public String getCategoryId() {
+    public int getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(String categoryId) {
+    public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
 
@@ -43,12 +49,12 @@ public class Category {
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
-//
-//    public String getCategory() {
-//        return category;
-//    }
-//
-//    public void setCategory(String category) {
-//        this.category = category;
-//    }
+
+    public List<Question> getCategory() {
+        return categories;
+    }
+
+    public void setCategory(List<Question> categories) {
+        this.categories = categories;
+    }
 }

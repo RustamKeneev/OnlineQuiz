@@ -11,6 +11,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_margin="16dp"
         android:text="item header text"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>

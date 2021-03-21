@@ -15,7 +15,7 @@ public class Question {
     @PrimaryKey
     @SerializedName("id")
     @NonNull
-    private String subCategoryId;
+    private int subCategoryId;
 
     @SerializedName("name")
     private String subCategoryName;
@@ -31,18 +31,18 @@ public class Question {
         return descriptionList;
     }
 
-    public Question(@NonNull String subCategoryId, String subCategoryName, List<Description> descriptionList) {
+    public Question(@NonNull int subCategoryId, String subCategoryName, List<Description> descriptionList) {
         this.subCategoryId = subCategoryId;
         this.subCategoryName = subCategoryName;
         this.descriptionList = descriptionList;
     }
 
     @NonNull
-    public String getSubCategoryId() {
+    public int getSubCategoryId() {
         return subCategoryId;
     }
 
-    public void setSubCategoryId(@NonNull String subCategoryId) {
+    public void setSubCategoryId(@NonNull int subCategoryId) {
         this.subCategoryId = subCategoryId;
     }
 

@@ -14,15 +14,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:layout_margin="4dp"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/tv_item_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12sp"
-                android:textSize="18sp"
+                android:padding="4dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:text="Item Title"/>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_sub_item"
                 android:layout_width="match_parent"

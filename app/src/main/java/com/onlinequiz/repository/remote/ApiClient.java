@@ -93,11 +93,12 @@ public class ApiClient implements IApiClient{
         });
     }
 
+
     private interface QuizNetworkClient{
         @GET("/api/quiz/")
         Call<List<Category>> getAllCategories();
 
-        @GET("/api/quiz/")
+        @GET("/api/quiz/questions/")
         Call<List<Question>> getQuestions();
     }
 
