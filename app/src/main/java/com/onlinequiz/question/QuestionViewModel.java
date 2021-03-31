@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.onlinequiz.App;
 import com.onlinequiz.model.Category;
+import com.onlinequiz.model.OptionList;
 import com.onlinequiz.model.Question;
 import com.onlinequiz.repository.IRepository;
 import com.onlinequiz.repository.remote.ApiClient;
@@ -20,7 +21,10 @@ public class QuestionViewModel extends ViewModel {
     public MutableLiveData<Question> questionMutableLiveData = new MutableLiveData<>();
     public MutableLiveData<List<Category>> categoryLiveData = new MutableLiveData<>();
 
+    public MutableLiveData<List<OptionList>> optionlistData = new MutableLiveData<>();
+
     public List<Question> list = new ArrayList<>();
+    public List<OptionList> optionLists = new ArrayList<>();
 
     public void getCategory(){
         App.iRepository.getCategory(new IRepository.CategoryCallback() {
@@ -37,7 +41,21 @@ public class QuestionViewModel extends ViewModel {
         });
     }
 
-    public void getQuestions(){
+    public void getOptionList(){
+        App.iRepository.getOptionList(new IRepository.CallBack<List<OptionList>>() {
+            @Override
+            public void onSuccess(List<OptionList> optionLists) {
+                optionlistData.setValue(optionLists);
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+
+            }
+        });
+    }
+
+//    public void getQuestions(){
 //       App.iRepository.getQuestions(new IRepository.CallBack<List<Question>>() {
 //           @Override
 //           public void onSuccess(List<Question> questions) {
@@ -50,7 +68,7 @@ public class QuestionViewModel extends ViewModel {
 //
 //           }
 //       });
-        ApiClient client = new ApiClient();
+//        ApiClient client = new ApiClient();
 //        client.getQuestions(new IRepository.CallBack<List<Question>>() {
 //            @Override
 //            public void onSuccess(List<Question> questions) {
@@ -82,4 +100,4 @@ public class QuestionViewModel extends ViewModel {
 //            }
 //        });
 //    }
-}
+//}

@@ -1,6 +1,7 @@
 package com.onlinequiz.repository.remote;
 
 import com.onlinequiz.model.Category;
+import com.onlinequiz.model.OptionList;
 import com.onlinequiz.model.Question;
 import com.onlinequiz.repository.IRepository;
 
@@ -93,6 +94,30 @@ public class ApiClient implements IApiClient{
         });
     }
 
+    @Override
+    public void getOptionList(IRepository.CallBack<List<OptionList>> callBack) {
+        Call<List<OptionList>> call = client.getOptionLists();
+        call.enqueue(new Callback<List<OptionList>>() {
+            @Override
+            public void onResponse(Call<List<OptionList>> call, Response<List<OptionList>> response) {
+                if (response.isSuccessful()){
+                    if (response.body() !=null){
+                        callBack.onSuccess(response.body());
+                    }else {
+                        callBack.onFailure(new Exception("Option List is empty"));
+                    }
+                }else {
+                    callBack.onFailure(new Exception("Response code Option List" + response.code()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<OptionList>> call, Throwable t) {
+                callBack.onFailure(new Exception(t));
+            }
+        });
+    }
+
 
     private interface QuizNetworkClient{
         @GET("/api/quiz/")
@@ -100,6 +125,8 @@ public class ApiClient implements IApiClient{
 
         @GET("/api/quiz/questions/")
         Call<List<Question>> getQuestions();
-    }
 
+        @GET("api/quiz/optionslist/")
+        Call<List<OptionList>> getOptionLists();
+    }
 }

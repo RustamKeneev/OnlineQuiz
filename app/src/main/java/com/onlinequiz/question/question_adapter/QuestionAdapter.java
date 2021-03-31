@@ -6,12 +6,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.onlinequiz.R;
 import com.onlinequiz.model.Description;
 import com.onlinequiz.model.Question;
+import com.onlinequiz.question.QuestionViewModel;
 import com.onlinequiz.test_sucategory.Item;
 import com.onlinequiz.test_sucategory.ItemAdapter;
 import com.onlinequiz.test_sucategory.SubItemAdapter;
@@ -22,9 +24,13 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
 
     private RecyclerView.RecycledViewPool viewPool = new RecyclerView.RecycledViewPool();
     private List<Question> itemList;
+    private QuestionViewModel questionViewModel;
+    private LifecycleOwner lifecycleOwner;
 
-    public QuestionAdapter(List<Question> itemList) {
+    public QuestionAdapter(List<Question> itemList, QuestionViewModel questionViewModel, LifecycleOwner lifecycleOwner) {
         this.itemList = itemList;
+        this.questionViewModel = questionViewModel;
+        this.lifecycleOwner = lifecycleOwner;
     }
 
     @NonNull
@@ -49,7 +55,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
         layoutManager.setInitialPrefetchItemCount(item.getDescriptionList().size());
 
         // Create sub item view adapter
-        DescriptionAdapter descriptionAdapter = new DescriptionAdapter(item.getDescriptionList());
+        DescriptionAdapter descriptionAdapter = new DescriptionAdapter(item.getDescriptionList(), questionViewModel, lifecycleOwner );
 
         holder.rvSubItem.setLayoutManager(layoutManager);
         holder.rvSubItem.setAdapter(descriptionAdapter);

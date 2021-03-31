@@ -1,5 +1,6 @@
 package com.onlinequiz.repository;
 
+import com.onlinequiz.model.OptionList;
 import com.onlinequiz.model.Question;
 import com.onlinequiz.repository.local.ILocalStorage;
 import com.onlinequiz.repository.remote.IApiClient;
@@ -24,6 +25,11 @@ public class Repository implements IRepository{
     @Override
     public void getQuestions( CallBack<List<Question>> callBack) {
         apiClient.getQuestions(callBack);
+    }
+
+    @Override
+    public void getOptionList(CallBack<List<OptionList>> callBack) {
+        apiClient.getOptionList(callBack);
     }
 
 

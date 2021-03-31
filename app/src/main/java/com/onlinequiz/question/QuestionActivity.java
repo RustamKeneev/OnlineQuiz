@@ -10,6 +10,7 @@ import android.util.Log;
 import com.onlinequiz.R;
 import com.onlinequiz.category.CategoryViewModel;
 import com.onlinequiz.model.Category;
+import com.onlinequiz.model.OptionList;
 import com.onlinequiz.question.question_adapter.QuestionAdapter;
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class QuestionActivity extends AppCompatActivity {
     QuestionViewModel questionViewModel;
     LinearLayoutManager layoutManager;
     QuestionAdapter questionAdapter;
+
 
 
     @Override
@@ -46,9 +48,17 @@ public class QuestionActivity extends AppCompatActivity {
         questionViewModel.categoryLiveData.observe(this, new Observer<List<Category>>() {
             @Override
             public void onChanged(List<Category> categories) {
-                questionAdapter = new QuestionAdapter(categories.get(0).getCategory());
+                questionAdapter = new QuestionAdapter(categories.get(0).getCategory(), questionViewModel, QuestionActivity.this);
                 rvItem.setLayoutManager(layoutManager);
                 rvItem.setAdapter(questionAdapter);
+            }
+        });
+
+        questionViewModel.getOptionList();
+        questionViewModel.optionlistData.observe(this, new Observer<List<OptionList>>() {
+            @Override
+            public void onChanged(List<OptionList> optionLists) {
+                Log.d("Rustam", "onChanged: " + optionLists.size());
             }
         });
     }
