@@ -21,7 +21,7 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder {
     }
 
     public interface IOnClickListener{
-        void onClick(String categoryId, String categoryTitle);
+        void onClick(int categoryId, String categoryTitle);
     }
 
     public void onBind(Category category){

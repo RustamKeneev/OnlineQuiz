@@ -1,16 +1,9 @@
 package com.onlinequiz.model;
 
-import androidx.annotation.NonNull;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
 import com.google.gson.annotations.SerializedName;
 
-@Entity(tableName = "categories")
 public class Category {
-    @PrimaryKey
     @SerializedName("id")
-    @NonNull
     private String categoryId;
 
     @SerializedName("name")
