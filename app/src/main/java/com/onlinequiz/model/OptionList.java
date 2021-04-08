@@ -13,7 +13,7 @@ public class OptionList {
     @PrimaryKey
     @NonNull
     @SerializedName("id")
-    private int id;
+    private String id;
 
     @SerializedName("options_post_answers")
     private String optionsPostAnswers;
@@ -22,17 +22,17 @@ public class OptionList {
     @SerializedName("options")
     List<OptionList> descriptionList;
 
-    public OptionList(int id, String optionsPostAnswers, List<OptionList> descriptionList) {
+    public OptionList(String id, String optionsPostAnswers, List<OptionList> descriptionList) {
         this.id = id;
         this.optionsPostAnswers = optionsPostAnswers;
         this.descriptionList = descriptionList;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

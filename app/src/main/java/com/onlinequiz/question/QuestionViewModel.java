@@ -22,6 +22,7 @@ public class QuestionViewModel extends ViewModel {
     public MutableLiveData<List<Category>> categoryLiveData = new MutableLiveData<>();
 
     public MutableLiveData<List<OptionList>> optionlistData = new MutableLiveData<>();
+    public MutableLiveData<List<OptionList>> listOfIds = new MutableLiveData<>();
 
     public List<Question> list = new ArrayList<>();
     public List<OptionList> optionLists = new ArrayList<>();
@@ -51,6 +52,21 @@ public class QuestionViewModel extends ViewModel {
             @Override
             public void onFailure(Exception e) {
 
+            }
+        });
+    }
+
+    public void  getOptionListById(List<Integer> id){
+        App.iRepository.getOptionListById(id, new IRepository.CallBack<List<OptionList>>() {
+            @Override
+            public void onSuccess(List<OptionList> optionLists) {
+                listOfIds.setValue(optionLists);
+                Log.d("optionListById", "onSuccess: " );
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+                Log.d("optionListById", "onSuccess: " );
             }
         });
     }

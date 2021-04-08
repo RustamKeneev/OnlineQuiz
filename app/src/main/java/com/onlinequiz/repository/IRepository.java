@@ -12,6 +12,7 @@ public interface IRepository {
     void getQuestions(CallBack<List<Question>> callBack);
 
     void getOptionList(CallBack<List<OptionList>> callBack);
+    void getOptionListById(List<Integer> id,CallBack<List<OptionList>> callBack);
 
     interface CategoryCallback{
         void onSuccess(List<Category> categories);

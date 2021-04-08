@@ -32,5 +32,10 @@ public class Repository implements IRepository{
         apiClient.getOptionList(callBack);
     }
 
+    @Override
+    public void getOptionListById(List<Integer> id, CallBack<List<OptionList>> callBack) {
+        apiClient.getOptionListById(id,callBack);
+    }
+
 
 }

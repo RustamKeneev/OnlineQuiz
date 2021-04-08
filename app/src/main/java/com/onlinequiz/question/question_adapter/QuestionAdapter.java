@@ -1,5 +1,6 @@
 package com.onlinequiz.question.question_adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,11 +27,13 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
     private List<Question> itemList;
     private QuestionViewModel questionViewModel;
     private LifecycleOwner lifecycleOwner;
+    private OnCheckedListener listener;
 
-    public QuestionAdapter(List<Question> itemList, QuestionViewModel questionViewModel, LifecycleOwner lifecycleOwner) {
+    public QuestionAdapter(List<Question> itemList, QuestionViewModel questionViewModel, LifecycleOwner lifecycleOwner,OnCheckedListener listener) {
         this.itemList = itemList;
         this.questionViewModel = questionViewModel;
         this.lifecycleOwner = lifecycleOwner;
+        this.listener = listener;
     }
 
     @NonNull
@@ -55,7 +58,11 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
         layoutManager.setInitialPrefetchItemCount(item.getDescriptionList().size());
 
         // Create sub item view adapter
-        DescriptionAdapter descriptionAdapter = new DescriptionAdapter(item.getDescriptionList(), questionViewModel, lifecycleOwner );
+        DescriptionAdapter descriptionAdapter = new DescriptionAdapter(item.getDescriptionList(), questionViewModel, lifecycleOwner,listener );
+
+//        descriptionAdapter.setOnCheckedListener(isChecked -> {
+//            Log.d("isCHEKED", isChecked.toString());
+//        });
 
         holder.rvSubItem.setLayoutManager(layoutManager);
         holder.rvSubItem.setAdapter(descriptionAdapter);
@@ -67,7 +74,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
         return itemList.size();
     }
 
-    class QuestionViewHolder extends RecyclerView.ViewHolder{
+    static class QuestionViewHolder extends RecyclerView.ViewHolder{
         private TextView tvItemTitle;
         private RecyclerView rvSubItem;
 

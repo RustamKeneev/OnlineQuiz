@@ -1,5 +1,6 @@
 package com.onlinequiz.repository.remote;
 
+import com.onlinequiz.model.AnswerPostModel;
 import com.onlinequiz.model.Category;
 import com.onlinequiz.model.OptionList;
 import com.onlinequiz.model.Question;
@@ -15,7 +16,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public class ApiClient implements IApiClient{
@@ -95,8 +99,8 @@ public class ApiClient implements IApiClient{
     }
 
     @Override
-    public void getOptionList(IRepository.CallBack<List<OptionList>> callBack) {
-        Call<List<OptionList>> call = client.getOptionLists();
+    public void getOptionListById(List<Integer> id, IRepository.CallBack<List<OptionList>> callBack) {
+        Call<List<OptionList>> call = client.getOptionListsById(new AnswerPostModel(id));
         call.enqueue(new Callback<List<OptionList>>() {
             @Override
             public void onResponse(Call<List<OptionList>> call, Response<List<OptionList>> response) {
@@ -104,10 +108,10 @@ public class ApiClient implements IApiClient{
                     if (response.body() !=null){
                         callBack.onSuccess(response.body());
                     }else {
-                        callBack.onFailure(new Exception("Option List is empty"));
+                        callBack.onFailure(new Exception("Response is empty"));
                     }
                 }else {
-                    callBack.onFailure(new Exception("Response code Option List" + response.code()));
+                    callBack.onFailure(new Exception("Response code getProfessionsTypeId" + response.code()));
                 }
             }
 
@@ -118,6 +122,36 @@ public class ApiClient implements IApiClient{
         });
     }
 
+    @Override
+    public void getOptionList(IRepository.CallBack<List<OptionList>> callBack) {
+
+    }
+
+//    @Override
+//    public void getOptionList(IRepository.CallBack<List<OptionList>> callBack) {
+////        Call<List<OptionList>> call = client.getOptionLists();
+////        call.enqueue(new Callback<List<OptionList>>() {
+////            @Override
+////            public void onResponse(Call<List<OptionList>> call, Response<List<OptionList>> response) {
+////                if (response.isSuccessful()){
+////                    if (response.body() !=null){
+////                        callBack.onSuccess(response.body());
+////                    }else {
+////                        callBack.onFailure(new Exception("Option List is empty"));
+////                    }
+////                }else {
+////                    callBack.onFailure(new Exception("Response code Option List" + response.code()));
+////                }
+////            }
+////
+////            @Override
+////            public void onFailure(Call<List<OptionList>> call, Throwable t) {
+////                callBack.onFailure(new Exception(t));
+////            }
+////        });
+//    }
+
+
 
     private interface QuizNetworkClient{
         @GET("/api/quiz/")
@@ -125,8 +159,14 @@ public class ApiClient implements IApiClient{
 
         @GET("/api/quiz/questions/")
         Call<List<Question>> getQuestions();
+//
+//        @POST("api/answers/")
+//        Call<List<OptionList>> getOptionLists(@Field("ids") List<Integer> listOfIds);
 
-        @GET("api/quiz/optionslist/")
-        Call<List<OptionList>> getOptionLists();
+
+        @POST("api/answers/")
+        Call<List<OptionList>> getOptionListsById(
+                @Body AnswerPostModel getOptionListsById
+        );
     }
 }

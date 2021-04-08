@@ -108,4 +108,5 @@
     <string name="purulent_pyelonephritis_text_title">Гнойный пиелонефрит</string>
     <string name="renal_colic_text_title">Часто рецидивирующая почечная колика, необходимость вводить инъекционные анальгетики более 4 раз в сутки</string>
     <string name="lack_of_effect_therapy_text_title">Отсутствие эффекта от камнеизгоняющей терапии в течение 2 недель</string>
+    <string name="result_text">Выдать результат</string>
 </resources>

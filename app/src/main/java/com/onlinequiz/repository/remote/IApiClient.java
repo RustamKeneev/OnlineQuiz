@@ -11,6 +11,7 @@ public interface IApiClient {
 
     void getQuestions(IRepository.CallBack<List<Question>> callBack);
 
+    void  getOptionListById(List<Integer> id,IRepository.CallBack<List<OptionList>> callBack);
     void  getOptionList(IRepository.CallBack<List<OptionList>> callBack);
 
 
