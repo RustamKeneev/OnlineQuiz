@@ -16,37 +16,5 @@
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/details_text"
-        app:layout_constraintTop_toBottomOf="@id/result_text"
-        app:layout_constraintLeft_toLeftOf="@id/result_text"
-        app:layout_constraintRight_toRightOf="@id/result_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
 
-    <LinearLayout
-        android:id="@+id/fragment_linear_layout"
-        app:layout_constraintTop_toBottomOf="@id/details_text"
-        app:layout_constraintLeft_toLeftOf="@id/details_text"
-        app:layout_constraintRight_toRightOf="@id/details_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints,Orientation">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/by_clinic_text_result_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-<!--    <TextView-->
-<!--        android:id="@+id/by_clinic_text_result"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/details_text"-->
-<!--        app:layout_constraintLeft_toLeftOf="@id/details_text"-->
-<!--        app:layout_constraintRight_toRightOf="@id/details_text"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        tools:ignore="MissingConstraints" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

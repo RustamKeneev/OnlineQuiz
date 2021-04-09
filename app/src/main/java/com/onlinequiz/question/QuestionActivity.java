@@ -5,13 +5,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.onlinequiz.R;
+import com.onlinequiz.ResultActivity;
 import com.onlinequiz.category.CategoryViewModel;
 import com.onlinequiz.model.Category;
 import com.onlinequiz.model.Description;
@@ -20,6 +24,7 @@ import com.onlinequiz.question.question_adapter.DescriptionAdapter;
 import com.onlinequiz.question.question_adapter.OnCheckedListener;
 import com.onlinequiz.question.question_adapter.QuestionAdapter;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,9 +37,7 @@ public class QuestionActivity extends AppCompatActivity implements OnCheckedList
     QuestionAdapter questionAdapter;
     private Button resultButton;
     private List<Integer> checkList;
-    private static final String IDS = "ids";
-
-
+    private String answer;
 
 
     @Override
@@ -77,9 +80,14 @@ public class QuestionActivity extends AppCompatActivity implements OnCheckedList
                 Log.d("Rustam", "onChanged: " + optionLists.size());
             }
         });
-
-//        questionViewModel.getOptionListById(IDS);
-
+        questionViewModel.listOfIds.observe(this, optionLists -> {
+            answer = optionLists.get(0).getOptionsPostAnswers();
+            Log.d("answers", "initModels: " + answer);
+            Intent intent = new Intent(QuestionActivity.this, ResultActivity.class);
+            intent.putExtra("option_post_answer",answer);
+            startActivity(intent);
+//            initViews();
+        });
     }
 
     private void initViews() {
@@ -88,8 +96,13 @@ public class QuestionActivity extends AppCompatActivity implements OnCheckedList
         resultButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                questionViewModel.getOptionListById(IDS);
                  questionViewModel.getOptionListById(checkList);
+                Log.d("option", "onClick: " + checkList);
+
+
+//                Intent intent = new Intent(QuestionActivity.this, ResultActivity.class);
+//                intent.putExtra("option_list", (Parcelable) checkList);
+//                startActivity(intent);
             }
         });
     }

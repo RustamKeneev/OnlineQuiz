@@ -99,7 +99,7 @@ public class QuestionViewModel extends ViewModel {
 //            }
 //        });
 
-    }
+}
 
 //    public void getQuestion(){
 //        App.iRepository.getQuestions(new IRepository.CallBack<List<Question>>() {
