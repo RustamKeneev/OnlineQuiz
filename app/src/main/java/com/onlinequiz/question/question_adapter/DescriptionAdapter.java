@@ -59,7 +59,7 @@ public class DescriptionAdapter  extends RecyclerView.Adapter<DescriptionAdapter
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
                 if (isChecked) {
-                    listener.checked(isChecked,descriptionList.get(position));
+                    listener.checked(isChecked,descriptionList.get(position), description.getId());
 //                    questionViewModel.optionlistData.observe(lifecycleOwner, new Observer<List<OptionList>>() {
 //                        @Override
 //                        public void onChanged(List<OptionList> optionLists) {
@@ -83,7 +83,7 @@ public class DescriptionAdapter  extends RecyclerView.Adapter<DescriptionAdapter
 //                    });
 
                 }else {
-                    listener.checked(isChecked,descriptionList.get(position));
+                    listener.checked(isChecked,descriptionList.get(position), description.getId());
                 }
             }
         });

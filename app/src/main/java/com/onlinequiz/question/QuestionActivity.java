@@ -67,7 +67,7 @@ public class QuestionActivity extends AppCompatActivity implements OnCheckedList
         questionViewModel.categoryLiveData.observe(this, new Observer<List<Category>>() {
             @Override
             public void onChanged(List<Category> categories) {
-                questionAdapter = new QuestionAdapter(categories.get(0).getCategory(), questionViewModel, QuestionActivity.this,QuestionActivity.this);
+                questionAdapter = new QuestionAdapter(categories.get(0).getCategory(), questionViewModel, QuestionActivity.this, QuestionActivity.this);
                 rvItem.setLayoutManager(layoutManager);
                 rvItem.setAdapter(questionAdapter);
             }
@@ -81,12 +81,14 @@ public class QuestionActivity extends AppCompatActivity implements OnCheckedList
             }
         });
         questionViewModel.listOfIds.observe(this, optionLists -> {
-            answer = optionLists.get(0).getOptionsPostAnswers();
-            Log.d("answers", "initModels: " + answer);
-            Intent intent = new Intent(QuestionActivity.this, ResultActivity.class);
-            intent.putExtra("option_post_answer",answer);
-            startActivity(intent);
-//            initViews();
+            if (!optionLists.isEmpty() && optionLists != null) {
+                answer = optionLists.get(0).getOptionsPostAnswers();
+                Intent intent = new Intent(QuestionActivity.this, ResultActivity.class);
+                intent.putExtra("option_post_answer", answer);
+                startActivity(intent);
+            }else {
+                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 
@@ -96,7 +98,7 @@ public class QuestionActivity extends AppCompatActivity implements OnCheckedList
         resultButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 questionViewModel.getOptionListById(checkList);
+                questionViewModel.getOptionListById(checkList);
                 Log.d("option", "onClick: " + checkList);
 
 
@@ -108,11 +110,11 @@ public class QuestionActivity extends AppCompatActivity implements OnCheckedList
     }
 
     @Override
-    public void checked(Boolean isChecked, Description description) {
+    public void checked(Boolean isChecked, Description description, String id) {
         if (isChecked) {
             checkList.add(Integer.parseInt(description.getId()));
-            Log.e("TAG", "checked: " + checkList.size() );
-        }else {
+            Log.e("TAG", "checked: " + checkList.size());
+        } else {
             checkList.remove(Integer.parseInt(description.getId()));
         }
     }
